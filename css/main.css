@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: bold;
+  src: url(../assets/fonts/OpenSansHebrewBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: 200;
+  src: url(../assets/fonts/OpenSansHebrewLight.woff2);
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: normal;
+  src: url(../assets/fonts/OpenSansHebrewRegular.woff2);
+}
+* {
+  box-sizing: border-box;
+  font-family: "OpenSansHebrew";
+}
+
+body {
+  margin: 0;
+}
+
+header.foreword {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#0000 0 80%, #289bcb99 90%, #289bcb 100%), url(../assets/images/bubbles-1.png) no-repeat 25% 150%, url(../assets/images/bubbles-1.png) no-repeat 75% 150%, url("../assets/images/HeaderMobileBG.png") center/cover #289bcb;
+}
+header.foreword:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../assets/images/HeaderMobileFG.png) center/cover;
+  opacity: 0.8;
+}
+header.foreword .logo {
+  font: 600 2rem times;
+  margin-bottom: auto;
+}
+header.foreword h1 {
+  font: 200 3rem OpenSansHebrew;
+  text-align: center;
+  color: #0b7eb5;
+  transform: translateY(calc(-4vw + 30px));
+}
+header.foreword h1 span {
+  font: 700 11rem/0.8 OpenSansHebrew;
+}
+header.foreword p {
+  color: #fff;
+  font: 1.2rem OpenSansHebrew;
+  text-align: center;
+  margin: 0 1rem 0.5rem;
+  z-index: 2;
+  height: 6rem;
+  max-width: 60ch;
+}
+header.foreword .writer {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 200;
+  margin: 5rem 0 2rem;
+  z-index: 2;
+}
+header.foreword .social-links {
+  margin-bottom: auto;
+  z-index: 2;
+}
+header.foreword .social-links > * {
+  color: #fff;
+  font-size: 2rem;
+}
+
+@media (min-width: 700px) {
+  header.foreword {
+    background: linear-gradient(#0000 0 80%, #289bcb99 90%, #289bcb 100%), url(../assets/images/bubbles-1.png) no-repeat 25% 150%, url(../assets/images/bubbles-1.png) no-repeat 75% 150%, url("../assets/images/HeaderBG.png") center/cover #289bcb;
+  }
+  header.foreword:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../assets/images/HeaderFG.png) center/cover;
+    opacity: 0.8;
+  }
+}
+main.underwater-grid {
+  background: linear-gradient(#289bcb, #1e4478);
+  padding-inline: 6vw;
+}
+main.underwater-grid figure:after {
+  content: url(../assets/images/bubbles-1.png);
+  padding-right: 50%;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: visible;
+}
+main.underwater-grid .grid-item {
+  transform: translateY(500px);
+  transition: transform 1s ease-in;
+}
+main.underwater-grid figure {
+  position: relative;
+  margin: 0 auto;
+  max-width: 350px;
+}
+main.underwater-grid figure img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 100%;
+}
+main.underwater-grid article {
+  max-width: 500px;
+  margin: 0 auto;
+  color: #fff;
+}
+main.underwater-grid article h1 {
+  font: bold 4rem OpenSansHebrew;
+  margin-block: 0;
+}
+main.underwater-grid article h1:after {
+  content: "מ'";
+  font-size: 2rem;
+}
+main.underwater-grid article .title {
+  font: bold 1.2rem OpenSansHebrew;
+}
+main.underwater-grid article .text {
+  line-height: 1.5;
+  margin-bottom: 10rem;
+}
+
+@media (min-width: 700px) {
+  main.underwater-grid {
+    padding-inline: max(5vw, calc(50vw - 450px));
+  }
+
+  .grid-item {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 6rem;
+  }
+  .grid-item figure {
+    flex: 1 0 auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

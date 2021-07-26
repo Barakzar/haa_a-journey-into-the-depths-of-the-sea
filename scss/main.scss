@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: bold;
+  src: url(../assets/fonts/OpenSansHebrewBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: 200;
+  src: url(../assets/fonts/OpenSansHebrewLight.woff2);
+}
+@font-face {
+  font-family: "OpenSansHebrew";
+  font-weight: normal;
+  src: url(../assets/fonts/OpenSansHebrewRegular.woff2);
+}
+* {
+  box-sizing: border-box;
+  font-family: "OpenSansHebrew";
+}
+body {
+  margin: 0;
+}
+
+// Header.
+header.foreword {
+  position: relative;
+  // background-color: #289BCB;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#0000 0 80%, #289bcb99 90%, #289bcb 100%),
+    url(../assets/images/bubbles-1.png) no-repeat 25% 150%,
+    url(../assets/images/bubbles-1.png) no-repeat 75% 150%,
+    url("../assets/images/HeaderMobileBG.png") center/cover #289bcb;
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../assets/images/HeaderMobileFG.png) center/cover;
+    opacity: 0.8;
+  }
+  .logo {
+    font: 600 2rem times;
+    margin-bottom: auto;
+  }
+  h1 {
+    font: 200 3rem OpenSansHebrew;
+    text-align: center;
+    color: #0b7eb5;
+    transform: translateY(calc(-4vw + 30px));
+    span {
+      font: 700 11rem/0.8 OpenSansHebrew;
+    }
+  }
+  p {
+    color: #fff;
+    font: 1.2rem OpenSansHebrew;
+    text-align: center;
+    margin: 0 1rem 0.5rem;
+    z-index: 2;
+    height: 6rem;
+    max-width: 60ch;
+  }
+  .writer {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 200;
+    margin: 5rem 0 2rem;
+    z-index: 2;
+  }
+  .social-links {
+    margin-bottom: auto;
+    z-index: 2;
+  }
+  .social-links > * {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 700px) {
+  header.foreword {
+    background: linear-gradient(#0000 0 80%, #289bcb99 90%, #289bcb 100%),
+      url(../assets/images/bubbles-1.png) no-repeat 25% 150%,
+      url(../assets/images/bubbles-1.png) no-repeat 75% 150%,
+      url("../assets/images/HeaderBG.png") center/cover #289bcb;
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url(../assets/images/HeaderFG.png) center/cover;
+      opacity: 0.8;
+    }
+  }
+}
+// Main (underWater-grid)
+main.underwater-grid {
+  //   max-width: 1100px;
+  //   margin: 0 auto;
+  //   border: 4px solid blue;
+  background: linear-gradient(#289bcb, #1e4478);
+  //   box-shadow: 0 -1rem red;
+  //   display: grid;
+  //   grid-template: 1fr;
+  padding-inline: 6vw;
+  //   overflow: hidden;
+  figure:after {
+    content: url(../assets/images/bubbles-1.png);
+    padding-right: 50%;
+    position: absolute;
+    inset: 0;
+    // background: url(../assets/images/bubbles-1.png) no-repeat;
+
+    z-index: 4;
+    overflow: visible;
+    // background: red;
+  }
+  .grid-item {
+    transform: translateY(500px);
+    transition: transform 1s ease-in;
+  }
+  figure {
+    position: relative;
+    margin: 0 auto;
+    // border: 1px solid #000;
+    max-width: 350px;
+    // background: url(../assets/images/bubbles-1.png) no-repeat;
+    img {
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  article {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #fff;
+    h1 {
+      font: bold 4rem OpenSansHebrew;
+      margin-block: 0;
+    }
+    h1:after {
+      content: "מ'";
+      font-size: 2rem;
+    }
+    .title {
+      font: bold 1.2rem OpenSansHebrew;
+    }
+    .text {
+      line-height: 1.5;
+      margin-bottom: 10rem;
+    }
+  }
+}
+@media (min-width: 700px) {
+  main.underwater-grid {
+    // max-width: 1100px;
+    padding-inline: max(5vw, calc(50vw - 450px));
+  }
+  .grid-item {
+    display: flex;
+    gap: 3rem;
+    // align-items: center;
+    margin-bottom: 6rem;
+
+    figure {
+      flex: 1 0 auto; //calc(auto - 10px);
+    }
+    article {
+      // width: 40%;
+      h1 {
+        // margin-top: 2rem;
+        // border: 1px solid #000;
+      }
+    }
+  }
+}
